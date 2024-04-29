@@ -126,6 +126,9 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
   }
 
   void _updateBackgroundColor(Color? backgroundColor) {
+    if (!mounted) {
+      return;
+    }
     final bgColor = backgroundColor ?? Theme.of(context).colorScheme.background;
     _controller.webViewController.setBackgroundColor(bgColor);
   }
